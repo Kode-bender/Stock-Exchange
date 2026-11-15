@@ -1,0 +1,29 @@
+[package]
+name = "exchange"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "exchange"
+path = "src/lib.rs"
+
+[[bin]]
+name = "exchange"
+path = "src/main.rs"
+
+[[bin]]
+name = "trader_terminal"
+path = "src/bin/trader_terminal.rs"
+
+[[bin]]
+name = "liquidity_bot"
+path = "src/bin/liquidity_bot.rs"
+
+[dependencies]
+rtrb = "0.3"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
